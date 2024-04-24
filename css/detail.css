@@ -1,0 +1,876 @@
+/* 전체 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+li{
+    list-style: none;
+}
+
+body.menu-opened {
+    overflow: hidden;
+}
+
+body.menu-opened::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.65;
+    z-index: 1;
+}
+
+label{
+    cursor: pointer;
+  }
+
+/* header */
+/* header{
+    background-color: #000;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.head{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head .main-logo{
+    display: flex;
+    align-items: center;
+}
+
+.menu-container{
+    margin-left: 30px;
+    display: none;
+}
+
+.menu-container ul li:not(li:last-child){
+    margin-right: 10px;
+}
+
+.menu-container li{
+    margin-right: 10px;
+} */
+
+/* 메뉴 호버 색깔 */
+/* .menu-container li a:hover{
+    color: #FEC100;
+    text-decoration: underline;
+    text-underline-offset: 5px ;
+}
+
+.head ul{
+    display: flex;
+}
+
+.head .main-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-area nav{
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-info div{
+    padding-right: 15px;
+}
+
+.user-info div:nth-child(n+1){
+    display: none;
+}
+
+.user-img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-img img{
+    width: 36px;
+    height: 36px;
+} */
+
+/* user 선택박스 */
+/* .user-btn{
+    cursor: pointer;
+}
+
+.user-list{
+    background: #fff;
+    color: #000;
+    position: absolute;
+    top: 40px;
+    right: -45px;
+    box-shadow: 0 4px 4px  black;
+    display: flex;
+    flex-direction: column;
+    width: 122px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.user-list a{
+    color: #000;
+}
+
+.user-list li:first-child{
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-list li:first-child div:nth-child(2){
+    font-size: 13px;
+    color: #b5b5b5;
+}
+
+.user{
+    padding: 10px 10px;
+    cursor: pointer; 
+}
+
+.user:nth-child(n+2):hover{
+    background: #cccccc7c;
+}
+
+.user-hidden{
+    display: none;
+}
+
+.search-img{
+    padding-left: 15px;
+    display: none;
+} */
+
+/* 지역 선택 박스 */
+
+/* #area-box {
+  position: relative;
+  padding-right: 5px;
+}
+
+#area-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+#area-button img {
+  padding-right: 5px;
+}
+
+.option-list {
+
+  background: #fff;
+  color: #000;
+
+  position: absolute;
+  top: 30px;
+  left: -7px;
+  width: 80px;
+
+  flex-direction: column;
+
+  box-shadow: 0 4px 4px black;
+
+  border-radius: 5px;
+}
+
+.option {
+  padding: 5px 8px;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #ccc;
+}
+
+.option-hidden {
+  display: none;
+} */
+
+/* 토글 */
+/* .toggle{
+    position: relative;
+    color: #000;
+}
+
+.tog-btn {
+    top: 0;
+    right: 0;
+}
+
+#toggleButton{
+    background: #000;
+    border: none;
+} 
+
+.tog-menu {
+    position: fixed;
+    top: 0;
+    right: -10px;
+    background-color: #fff;
+    flex-direction: column;
+    width: 66vw;
+    height: 100vh;
+    display: none;
+    z-index: 2;
+}
+
+.tog-menu div{
+    display: flex;
+    flex-direction: column;
+}
+
+.tog-menu .id-box{
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+}
+
+.tog-menu .id{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding: 0px 0px 15px 0px;
+}
+
+#closeButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menus{
+    width: 100%;
+    padding: 40px 20px 0px 20px;
+    text-align: right;
+}
+
+.menus div ul{
+    padding-right: 20px;
+}
+
+.menus div ul li{
+    padding-bottom: 14px;
+}
+
+.menus div:first-child{
+    border-bottom: 1px solid #ccc;
+}
+
+.menu a{
+    color: #000;
+}
+
+.menu li{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.menu li a:hover{
+    color: #08a5c0;
+}
+
+.tog-menu .menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.as li{
+    font-size: 15px;
+    margin-bottom: 6px;
+    color:  #ccc;
+}
+
+.tog-menu .as{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+} */
+
+/* section 1 */
+    .back{
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 505px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .back .back-img{
+        position: absolute;
+        width: 120%;
+        height: 140vh;
+        object-position: center;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        filter: brightness(0.35) blur(5px);
+    }
+
+    .fronts{
+        top: 30px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .poast-img{
+        width: 200px;
+        height: 280px;
+        border: 1px solid #000;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .poast-img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .poast-des{
+        margin-top: 25px;
+        width: 325px;
+        color: #fff;
+    }
+
+    .poast-des div{
+        margin-bottom: 3px;
+    }
+
+    .poast-des div:first-child{
+        display: flex;
+        align-items: center;
+    }
+
+    .poast-des div:first-child img{
+        margin-right: 5px;
+    }
+
+    .poast-area{
+        font-size: 14px;
+    }
+
+    .area-name{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .show-price{
+        width: 335px;
+        height: 50px;
+        margin-top: 25px;
+        background-color: #08a5c0;
+        border-radius: 50px;
+        bottom: 27px;
+        font-size: 24px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+/* section 2 */
+    #second{
+        display: flex;
+
+    }
+
+    .pc-prices{
+        position: relative;
+        top: -25px;
+        display: none;
+        margin-left: 50px;
+        border: 1px solid #000;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 290px;
+        height: fit-content;
+        padding: 20px;
+        background: #fff;
+    }
+
+    .pc-prices .show-schedule div:first-child{
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    .pc-prices .show-schedule p{
+        border-bottom: 2px solid #E9E8EC;
+        padding: 10px 0 10px 0;
+        width: 95%;
+    }
+
+    .pc-prices .user-needs{
+        display: flex;
+        height: 100%;
+    }
+
+    .user-needs svg {
+      fill: #fff;
+    }
+
+    .liked {
+      fill: #FFD700;
+    }
+
+    .pc-prices .user-needs div:nth-child(2){
+        margin-left: 15px;
+    }
+
+    .info-area{
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        background-color: #000;
+        color: #fff;
+    }
+
+    .info-area div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .info-area div:hover{
+        border-bottom: 3px solid #FEC100;
+    }
+
+    /*  */
+   .showing {
+        border-bottom: 3px solid #FEC100;
+    }    
+    
+    .show-info{
+        margin-top: 20px;
+        margin-left: 20px;
+
+    }
+
+    .show-info h2{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .detail{
+        display: flex;
+        margin: 20px 0 20px 0px;
+        align-items: center;
+    }
+
+    .detail img{
+        width: 20px;
+    }
+
+    .detail .detail-seasson{
+        margin-left: 15px;
+        font-size: 16px;
+    }
+
+    .detail-seasson div:first-child{
+        font-weight: bold;
+    }
+
+    .detail-seasson div:nth-child(2){
+        color: #b5b5b5;
+    }
+
+    .show-schedule{
+        margin-bottom: 20px;
+    }
+
+    .show-schedule div:first-child{
+        font-weight: bold;
+        font-size: 16px;        
+    }
+
+   .schedule p{
+        border-bottom: 2px solid #E9E8EC;
+        padding: 10px 0 10px 0;
+        width: 90%;
+    }
+
+
+
+    /* section2: 인포 이미지 부분 */
+    .info-imgs {
+        position: relative;
+        margin-right: 20px;
+        height: 463px;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        z-index: -1;
+        object-fit: fill;
+    }
+    
+    .info-imgs.show{
+        height: auto;
+    }
+
+    .info-imgs.show::after {
+        height: 0px;
+    }
+
+    .info-imgs::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 250px; 
+        background: linear-gradient(to bottom, transparent , white);
+    }
+    
+    .info-imgs img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .info-btn{
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .info-btn button{
+        background: none;
+        padding: 15px 18px 15px 18px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 20px 23px 0 0;
+    }
+
+    .info-btn button:hover{
+        background: #E9E8EC;
+    }
+
+    /* section2: 지도 */
+    .maps{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .map-name{
+        display: flex;
+        align-items: center;
+        margin: 20px 0 20px 0px;
+        font-size: 14px;
+    }
+
+    .map-name img{
+        width: 24px;
+        height: 28px;
+        margin-right: 15px;
+    }
+
+    .map-name div div:nth-child(2){
+        color: #b5b5b5;
+    }
+
+    .kakao-map{
+        width: 100%;
+        height: 300px;
+        z-index: -3;
+    }
+
+    #map{
+        width: 100%;
+        height: 100%;
+    }
+
+    /* section 3 */
+    .three{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        width: 100%;
+        bottom: 0;
+        overflow: hidden;
+        transition: 0.3s;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.7);
+    }
+
+    .three .user-needs{
+        padding: 27px 27px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .user-needs div:first-child{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #08a5c0;
+    }
+
+    .user-needs div:nth-child(2){
+        width: 265px;
+        height: 50px;
+        border-radius: 50px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #08a5c0;
+        color: #fff;
+        font-size: 24px;
+        margin-left: 20px;
+    }
+
+/* footer */
+    footer{
+        background-color: #000;
+        color: #fff;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 12px;
+        margin-bottom: 106px;
+    }
+
+    .foot{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foot p{
+        margin-bottom: 6px;
+    }
+
+/* tablet mode */
+@media screen and (min-width:768px) {
+
+    /* toggle */
+    /* .tog-menu{
+        width: 33vw;
+    }
+
+    .back{
+        height: 75vh;
+    }
+
+    .poast-img{
+        margin-top: 90px;
+    }
+
+    .poast-des{
+        padding-top: 130px;
+    }
+
+    .poast-area{
+        font-size: 20px;
+    }
+
+    .area-name{
+        font-size: 30px;
+    }
+
+    .poast-des{
+        width: 400px;
+    }
+
+    .show-price{
+        width: 410px;
+    }
+
+    .detailss{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .details{
+        width: 50%;
+    }
+    
+    #show-area{
+        margin-top: 75px;
+    }
+
+    .kakao-map{
+        height: 500px;
+    } */
+}
+
+@media screen and (min-width:1024px) {
+      /* header */
+      /* .head{
+        width: 100%;
+    }
+
+    .user-info div:nth-child(n+1){
+        display: block;
+    }
+
+    #area-box{
+        padding-right: 15px;
+    }
+
+    .search-img{
+        display: block;
+    }
+
+    .menu-container{
+        display: block;
+    }
+
+    .main-area nav{
+        display: flex;
+    }
+
+    .main-area nav div:first-child, .main-area nav div:nth-child(n+3){
+        display: block;
+    }
+
+    .toggle{
+        display: none;
+    } */
+
+    /* section 1 */
+  
+
+    .fronts{
+        flex-direction: row-reverse;
+    }
+
+    .poast-img{
+        width: 300px;
+        height: 420px;
+        margin-left: 189px;
+    }
+
+    .area-name{
+        font-size: 39px;
+    }
+
+    .show-price{
+        width: 360px;
+    }
+
+    #second{
+        display: flex;
+        justify-content: center;
+    }
+
+    /* section 2 */
+    .pc-prices{
+        display: block;
+    }
+
+    .two{
+        position: relative;
+        top: -25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 550px;
+        margin-left: 70px;
+        border: 1px solid #000;
+        border-radius: 10px ;
+        overflow: hidden;
+    }
+
+    .info-details{
+        margin-top: 10px;
+    }
+
+    .info-details h2{
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    #show-area{
+        margin-top: 60px;
+    }
+
+    .maps{
+        margin: 0 0 20px 0;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .show-info .show-schedule{
+        display: none;
+    }
+
+    .pc-prices{
+        display: block;
+        position: relative;
+    }
+
+    /* section 3 */
+    .three{
+        display: none;
+    }
+
+    footer{
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .two{
+        width: 100%;
+        max-width:786px;
+    }
+
+    .pc-prices{
+        width: 415px;
+    }
+
+    .maps{
+        margin: 0 0 20px 0;
+        max-width: 745px;
+        width: 100%;
+    }
+
+}

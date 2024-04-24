@@ -1,0 +1,171 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+ 
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+}
+.wrap{
+  max-width: 500px;
+  margin: 0 auto;
+}
+header{
+  font-weight: 700; 
+  font-size: 16px;
+  max-width: 500px;
+  margin-top: 15px;
+  position: fixed;
+  padding-left: 20px;
+}
+
+.sign-up{
+  width: 100%;
+  padding-top: 100px;
+}
+.sign-up h1{
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+}
+.sign-up-input{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.id-box{
+display: flex;
+width: 90%;
+max-width: 500px;
+height:50px;
+border-radius: 5px 5px 0 0;
+border:1px solid black;
+background-color:rgba(233,232,236,0.2);
+}
+.name-box{
+display: flex;
+width: 90%;
+max-width: 500px;
+height:50px;
+margin-top: -1px;
+border-radius: 0 0 5px 5px;
+border:1px solid #000 ;
+background-color:rgba(233,232,236,0.2)
+}
+.password-box,.password-box2,.email-box{
+  display: flex;
+  width: 90%;
+  max-width: 500px;
+  height:50px;
+  margin-top: -1px;
+  border:1px solid black;
+  background-color:rgba(233,232,236,0.2)
+}
+.check-button {
+padding-right: 15px;
+white-space: nowrap;
+border: none;
+font-weight: 600;
+font-size: 14px;
+color: #000;
+background-color:rgba(233,232,236,0.2)
+}
+.icon{
+  background-color:rgba(233,232,236,0.2);
+  padding: 0 20PX;
+}
+input:focus {outline:none;}
+input.id{
+  width: 100%;
+  max-width: 500px;
+  height:50px;
+  border:none;
+  background-color:rgba(233,232,236,0.2);
+}
+input.email{
+  width: 100%;
+  max-width: 500px;
+  height:50px;
+  border:none;
+  background-color:rgba(233,232,236,0.2);
+}
+.password,.password2,.name{
+  width: 100%;
+  max-width: 500px;
+  height:50px;
+  border:none;
+  background-color:rgba(233,232,236,0.2);
+}
+.button-box{
+  display: flex; 
+  justify-content: center;
+  max-width: 500px;
+  bottom: 30px;
+  position: fixed;
+  width: 100%;
+}
+.button{
+  width: 90%;
+  max-width: 500px;
+  height:54px;
+  text-align: center;
+  line-height: 50px;
+  background-color:#000;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+}
+.userid-error,
+.userpw-error,
+.unmatch-pw,
+.usermail-error,
+.usernick-error {
+  display: none;
+  margin-left:30px;
+  margin-top: 10px;
+  color: red;
+  font-size: 10px;
+}
+.focus{
+  border: 2px solid #000;
+}
+.error{
+  border:2px solid red;
+  margin-top: -2px;
+}
+.error-color{
+  color: red;
+}
+
+@media screen and (min-width:768px) {
+  .sign-up{
+    padding-top: 200px;
+  }
+  .id-box,
+  .password-box,
+  .password-box2,
+  .email-box,
+  .name-box,
+  .button{
+    width: 500px;
+  }
+.userid-error,
+.userpw-error,
+.unmatch-pw,
+.usermail-error,
+.usernick-error{
+  margin-left: 0;
+}
+  header{padding-left: 0;}
+}

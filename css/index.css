@@ -1,0 +1,801 @@
+/* 전체 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    overflow-x: hidden ;
+    height: 100vh;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+li{
+    list-style: none;
+}
+
+body.menu-opened {
+    overflow: hidden;
+}
+
+body.menu-opened::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.65;
+    z-index: 1;
+}
+
+label{
+    cursor: pointer;
+  }
+
+.wrapper {
+    position:relative; 
+    min-height:100%;
+}
+
+.wrapper .list {
+    padding-bottom:100px;
+}
+
+.wrapper footer {
+    position:absolute; 
+    width:100%; 
+    bottom:0;
+}
+
+/* header */
+header{
+    background-color: #000;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.head{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head .main-logo{
+    display: flex;
+    align-items: center;
+}
+
+.menu-container{
+    margin-left: 30px;
+    display: none;
+}
+
+.menu-container ul li:not(li:last-child){
+    margin-right: 10px;
+}
+
+.menu-container li{
+    margin-right: 10px;
+}
+
+/* 메뉴 호버 색깔 */
+.menu-container li a:hover{
+    color: #FEC100;
+
+    text-decoration: underline;
+    text-underline-offset: 5px ;
+    text-decoration-thickness: 2px;
+}
+
+.head ul{
+    display: flex;
+}
+
+.head .main-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-area nav{
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info div > a:hover {
+  color: #FEC100;
+
+  text-decoration: underline;
+  text-underline-offset: 5px ;
+  text-decoration-thickness: 2px;
+
+}
+
+.main-area nav > div:hover a svg{
+  fill: #FEC100;
+}
+
+.user-info{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-info > div{
+    padding-right: 15px;
+}
+
+.user-info div:nth-child(n+1){
+    display: none;
+}
+
+.user-img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 2px solid #FEC100;
+    
+}
+
+.user-img img{
+  width: 100%
+}
+
+/* user 선택박스 */
+.user-btn{
+    cursor: pointer;
+}
+
+.user-list{
+    background: #fff;
+    color: #000;
+    position: absolute;
+    top: 40px;
+    right: -45px;
+    box-shadow: 0 4px 4px  black;
+    display: flex;
+    flex-direction: column;
+    width: 122px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.user-list a{
+    color: #000;
+}
+
+.user-list li:first-child{
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-list li:first-child div:nth-child(2){
+    font-size: 13px;
+    color: #b5b5b5;
+}
+
+.user{
+    padding: 10px 10px;
+    cursor: pointer; 
+}
+
+.user:nth-child(n+2):hover{
+    background: #cccccc7c;
+}
+
+.user-hidden{
+  display: none;
+}
+
+.search-img{
+  display: none;
+}
+
+.search-img:hover {
+  box-shadow: inset 0 -2px 0 0 #fec100; 
+  /* border_bottom에 선을 주지 않고 box-shadow를 이렇게 주면
+   호버 했을 시 움찔하는 현상 없음  */
+}
+
+
+
+/* 지역 선택 박스 */
+
+#area-box {
+  position: relative;
+  padding-right: 5px;
+}
+
+#area-box:hover path{
+  fill: #fec100;
+}
+
+#area-button {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+#area-button img {
+  padding-right: 5px;
+}
+
+.option-list {
+
+  background: #fff;
+  color: #000;
+
+  position: absolute;
+  top: 30px;
+  left: -7px;
+  width: 80px;
+
+  flex-direction: column;
+
+  box-shadow: 0 4px 4px black;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+}
+
+.option {
+  padding: 5px 8px;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: #ccc;
+}
+
+.option-hidden {
+  display: none;
+}
+
+/* 토글 */
+.toggle{
+    position: relative;
+    color: #000;
+}
+
+.tog-btn {
+    top: 0;
+    right: 0;
+}
+
+#toggleButton{
+    background: #000;
+    border: none;
+    cursor: pointer;
+}
+
+#toggleButton:hover path {
+  fill: #FEC100;
+}
+
+.tog-menu {
+    position: fixed;
+    top: 0;
+    right: -10px;
+    background-color: #fff;
+    flex-direction: column;
+    width: 66vw;
+    height: 100vh;
+    display: none;
+    z-index: 2;
+}
+
+.tog-menu > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.tog-menu .id-box{
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+}
+
+.tog-menu .id{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding: 0px 0px 15px 0px;
+}
+
+.id li a {
+  color: black;
+  
+}
+
+.toggle-user-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-user-img-wrap {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  overflow: hidden;
+
+  border: 2px #08a5c0 solid;
+  margin-right: 15px;
+}
+
+.toggle-user-img-wrap img {
+  width: 100%;
+}
+
+#closeButton{
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    width: 100%;
+    height: 100%;
+}
+
+#closeButton img {
+  width: 100%;
+  height: 100%;
+}
+
+.menus{
+    width: 100%;
+    padding: 40px 20px 0px 20px;
+    text-align: right;
+}
+
+.menus div ul{
+    padding-right: 20px;
+}
+
+.menus div ul li{
+    padding-bottom: 14px;
+}
+
+.menus div:first-child{
+    border-bottom: 1px solid #ccc;
+}
+
+.menu a{
+    color: #000;
+}
+
+.menu li{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.menu li a:hover{
+    color: #08a5c0;
+}
+
+.tog-menu .menu{
+    display: flex;
+    flex-direction: column;
+}
+
+.as li{
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.as a {
+  color:  #ccc;
+}
+
+.tog-menu .as{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 목록 pop-show 태그 */
+
+.pop-show {
+  color: black;
+}
+
+/* section 1 */
+
+.popular{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    /* padding-left: 20px; */
+}
+
+.pop{
+    overflow: scroll;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+    padding-top: 15px;
+}
+
+.pop .pop-show:last-child{
+    margin-right: 20px;
+}
+
+.pop::-webkit-scrollbar{
+    display: none;
+}
+
+.pop-title{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.pop-title a{
+    color: #ccc;
+}
+
+.pop-title div{
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    width: 154px;
+    height: 20px;
+    margin-left: 12px;
+}
+
+.pop-show{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.pop-show .show-img img{
+    width: 200px;
+    height: 280px;
+    border-radius: 10px;
+}
+
+.pop-show .pop-description ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.pop-description strong{
+    font-size: 20px;
+}
+
+.pop-description li:first-child{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 160px;
+}
+
+.pop-show .pop-description li{
+    margin-bottom: 5px;
+}
+
+.pop-description li:nth-child(2){
+    font-size: 12px;
+    color: #ccc;
+}
+
+.pop-description li:nth-child(3){
+    background-color: #2c2c2c;
+    padding: 3px 10px;
+    font-size: 13px;
+    border-radius: 30px;
+    color: white;
+}
+
+/* seciton2 */
+.two .pop-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.two .pop-title div{
+    width: 37%;
+}
+
+.two .pop-title p:nth-child(3){
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: underline;
+    padding-right: 20px;
+}
+
+/* section3 */
+.three{
+    padding-bottom: 130px;
+}
+
+.three .pop-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.three .pop-title div{
+    width: 43%;
+}
+
+.three .pop-title p:nth-child(3){
+    font-size: 12px;
+    color: #ccc;
+    text-decoration: underline;
+    padding-right: 20px;
+}
+
+/* footer */
+footer{
+    background-color: #000;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 12px;
+}
+
+.foot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foot p{
+    margin-bottom: 6px;
+}
+
+/* tablet 768px */
+@media screen and (min-width:768px)  {
+ 
+/* toggle */
+.tog-menu{
+    width: 33vw;
+}
+
+/* section 1 */
+.pop{
+    overflow: scroll;
+}
+
+
+.pop-title{
+    padding-right: 20px;
+}
+
+.pop-title div{
+    width: 74%;
+}
+
+
+/* section 2 */
+.two .pop-title div{
+    display: block;
+    width: 70%;
+} 
+
+.two .pop-title p:nth-child(3){
+    padding-right: 0px;
+}
+
+/* section 3 */
+.three .pop-title div{
+    display: block;
+    width: 72%;
+}
+
+.three .pop-title p:nth-child(3){
+    padding-right: 0px;
+}
+}
+
+/* pc 1024px */
+@media screen and (min-width:1024px) {
+    /* header */
+    .head{
+        width: 100%;
+    }
+
+    .user-info div:nth-child(n+1){
+        display: block;
+    }
+
+    .user-info {
+      margin-right: 15px;
+    }
+
+    #area-box{
+        padding-right: 15px;
+    }
+
+    .search-img{
+        display: block;
+    }
+
+    .menu-container{
+        display: block;
+    }
+
+    .main-area nav{
+        display: flex;
+    }
+
+    .main-area nav div:first-child, .main-area nav div:nth-child(n+3){
+        display: block;
+    }
+
+    .toggle{
+        display: none;
+    }
+
+    /* section1 */
+   .pop{
+        gap: 15px;
+        margin-right: 20px;
+    }
+
+    .pop-title div{
+        width: 81%;
+    }
+
+    .pop-description li:first-child{
+        width: 150px;
+    }
+
+    .pop-show{
+        width: 100%;
+        height: 100%;
+    }
+
+    .show-img{
+        width: 100%;
+    }
+
+    .pop-show .show-img img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* section2 */
+    .two .pop-title div{
+        width: 78%;
+    }
+
+    .two .pop-title p:nth-child(3){
+        padding-right: 0px;
+    }
+
+    /* section3 */
+    .three .pop-title div{
+        width: 80%;
+    }
+    
+    .three .pop-title p:nth-child(3){
+        padding-right: 0px;
+    }
+
+}
+
+/* pc 1440px */
+@media screen and (min-width:1440px) {
+    /* all seclect */
+    header{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .head{
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .user-info div:nth-child(n+1){
+        display: block;
+    }
+
+    .search-img{
+        display: block;
+    }
+
+    #area-box{
+        padding-right: 15px;
+    }
+
+    section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section .popular{
+        width: 100%;
+        max-width: 1200px;
+    }
+
+    .menu-container{
+        display: block;
+    }
+
+    .main-area nav{
+        display: flex;
+        margin-right: 10 px;
+    }
+
+    .main-area nav div:first-child, .main-area nav div:nth-child(n+3){
+        display: block;
+    }
+    
+    .toggle{
+        display: none;
+    }
+
+    /* section1 */
+    .pop{
+        padding-left: 0px;
+    }
+
+    .pop-title{
+        padding-left: 0px;
+    }
+
+    .pop-title div{
+        width: 83%;
+        margin-left: 20px;
+    }
+
+    .pop-show .show-img img{
+        width: 224px;
+        height: 316px;
+    }
+
+    .pop .pop-show:last-child{
+        margin-right: 0px;
+    }
+
+    /* seciton2 */
+    .two .pop-title div{
+        width: 80%;
+    }
+
+    /* .two .pop-title p:nth-child(3){
+        display: none;
+    }    */
+
+    /* section3 */
+    .three .pop-title div{
+        width: 82%;
+    }
+
+    /* .three .pop-title p:nth-child(3){
+        display: none;
+    }    */
+}
